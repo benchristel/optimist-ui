@@ -1,0 +1,131 @@
+:root {
+  --window-header-border-top: #b4b4b4;
+  --window-header-highlight: #e2e2e2;
+  --window-header-background: linear-gradient(to bottom, #cfcfcf, #a8a8a8);
+  --window-header-border-bottom: #515151;
+  --window-header-border-side: #a8a8a8;
+  --window-header-border-radius: 4px;
+  --window-header-title-shadow: #cfcfcf;
+  --control-panel-background: #ededed;
+  --inset-frame-border-radius: 3px;
+  --inset-frame-background: #e5e5e5;
+  --inset-frame-border-side: #c7c7c7;
+  --inset-frame-border-top: #ababab;
+  --inset-frame-border-bottom: #d3d3d3;
+  --focus-ring: #80a8d9;
+  --lcd: linear-gradient(to bottom, #fcffea, #d5d9bd);
+
+  --ruby: #b32523;
+  --ruby-shadow: #8a4d47;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+body, html {
+  background: var(--control-panel-background);
+  height: 100%;
+  font-family: 'Noto Sans', 'Verdana', 'Helvetica', sans-serif;
+  font-size: 12px;
+}
+
+button {
+  /* default style is level with the background */
+  cursor: pointer;
+  box-shadow: 0 1px #fff3;
+  border: 1px solid #0005;
+  border-radius: 99em;
+  padding: 0.1em 2em;
+  background: linear-gradient(to bottom, #fff, #d0d0d0);
+  text-transform: capitalize;
+  text-shadow: 0 1px #fffa;
+}
+
+button.raised {
+  box-shadow: 0 1px 1px #0002;
+  border: 1px solid #0007;
+}
+
+.glass, .raised.glass {
+  border-bottom: 1px solid #0008;
+  background:
+    linear-gradient(to bottom, #fbfbfb, #fff 5%, #e4e4e4 39%, #ddd 40%, #e0e0e0 60%, #fff),
+    radial-gradient(circle closest-corner at 0 58%, #ddd 40%, #fff0 110%),
+    radial-gradient(circle closest-corner at 100% 58%, #ddd 40%, #fff0 110%);
+  background-blend-mode: darken;
+}
+
+section.inset {
+  border: 1px solid var(--inset-frame-border-side);
+  border-top: 1px solid var(--inset-frame-border-top);
+  border-bottom: 1px solid var(--inset-frame-border-bottom);
+  border-radius: 3px;
+  box-shadow: inset 0 1px 1px #0000001a;
+  background: var(--inset-frame-background);
+}
+
+label.above {
+  padding-left: 8px;
+  margin-top: 12px;
+  margin-bottom: 1px;
+  font-size: 11px;
+  letter-spacing: 0.0125em;
+  display: block;
+}
+
+.window-header {
+  border-radius: 4px 4px 0 0;
+  border: 1px solid var(--window-header-border-side);
+  border-top: 1px solid var(--window-header-border-top);
+  border-bottom: 1px solid var(--window-header-border-bottom);
+  box-shadow: inset 0 1px var(--window-header-highlight);
+  background: var(--window-header-background);
+  min-height: 23px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center;
+  text-shadow: 0 1px var(--window-header-title-shadow);
+}
+
+.window-header > :nth-child(1),
+.window-header > :nth-child(3) {
+  flex-grow: 1;
+}
+
+.window-header > :nth-child(2) {
+  flex-grow: 0;
+}
+
+.window-header > :nth-child(3) {
+  text-align: right;
+}
+
+.gem {
+  width: 14px;
+  height: 14px;
+  border-radius: 99em;
+  background: radial-gradient(ellipse at center, #fff 16%, #e6e0e000 90%), radial-gradient(ellipse at center, #f9b5aaee 10%, #f9b5aa88 42%, #f9b5aa00 70%), linear-gradient(to bottom, var(--ruby), var(--ruby));
+  background-size: 95% 42%, 115% 100%, 100% 100%;
+  background-position: 50% -10%, 50% 4px, 0 0;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  box-shadow: inset 0 1px 1px #411, 0 1px #d0d0d0;
+  border: 1px solid #4c1c1f;
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #844 /* var(--ruby-shadow)*/;
+}
+
+.wat {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  background: radial-gradient(ellipse at center, #f00, #0f0);
+  background-size: 100% 40%;
+  background-position: 50% -10%;
+  background-repeat: no-repeat;
+}
