@@ -106,19 +106,45 @@ label.above {
   text-align: right;
 }
 
+.gem.red {
+  --base-color: #c02814;
+  --specular-highlight-at-center: #fff;
+  --specular-highlight-at-edge: #e6e0e000;
+  --glow-1: #f9b6acff;
+  --glow-2: #f9b6acdd;
+  --glow-3: #f9b6ac88;
+  --glow-4: #f9b6ac00;
+  --shadow: #411;
+  --border: #4c1c1f;
+  --border-bottom: #844;
+}
+
+.gem.green {
+  --base-color: #694;
+  --specular-highlight-at-center: #fff;
+  --specular-highlight-at-edge: #e0e6e000;
+  --glow-1: #c6f9bcff;
+  --glow-2: #c6f9bcdd;
+  --glow-3: #c6f9bc88;
+  --glow-4: #c6f9bc00;
+  --shadow: #121;
+  --border: #1f331f;
+  --border-bottom: #464;
+}
+
 .gem {
   width: 14px;
   height: 14px;
   border-radius: 99em;
   background:
-    radial-gradient(ellipse at center, #fff 25%, #e6e0e000 90%),
-    radial-gradient(ellipse at center, #f9b5aaee 10%, #f9b5aa88 42%, #f9b5aa00 70%),
-    linear-gradient(to bottom, var(--ruby), var(--ruby));
-  background-size: 95% 41%, 115% 100%, 100% 100%;
-  background-position: 50% -12%, 50% 4px, 0 0;
+    radial-gradient(ellipse at center, var(--specular-highlight-at-center) 25%, var(--specular-highlight-at-edge) 90%),
+    radial-gradient(ellipse at center, var(--glow-1) 10%, var(--glow-2) 25%, var(--glow-3) 52%, var(--glow-4) 80%),
+    linear-gradient(to bottom, var(--base-color), var(--base-color));
+  background-size: 95% 41%, 100% 100%, 100% 100%;
+  background-position: 50% -12%, 50% 5px, 0 0;
   background-repeat: no-repeat, no-repeat, no-repeat;
-  box-shadow: inset 0 1px 1px #411, 0 1px #d0d0d0;
-  border: 1px solid #4c1c1f;
+  box-shadow: inset 0 1px 1px var(--shadow), 0 1px #d0d0d0;
+  border: 1px solid var(--border);
   border-top: 1px solid #111;
-  border-bottom: 1px solid #844 /* var(--ruby-shadow)*/;
+  border-bottom: 1px solid var(--border-bottom);
 }
