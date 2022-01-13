@@ -38,11 +38,15 @@ button {
   cursor: pointer;
   box-shadow: 0 1px #fff3;
   border: 1px solid #0005;
-  border-radius: 99em;
+  border-radius: 4px;
   padding: 0.1em 2em;
   background: linear-gradient(to bottom, #fff, #d0d0d0);
   text-transform: capitalize;
   text-shadow: 0 1px #fffa;
+}
+
+.rounded {
+  border-radius: 99em;
 }
 
 button.raised {
@@ -51,12 +55,17 @@ button.raised {
 }
 
 .glass, .raised.glass {
+  --base-background: linear-gradient(to bottom, #fbfbfb, #fff 5%, #e4e4e4 39%, #ddd 40%, #e0e0e0 60%, #fff);
   border-bottom: 1px solid #0008;
+  background: var(--base-background);
+  background-blend-mode: darken;
+}
+
+.rounded.glass {
   background:
-    linear-gradient(to bottom, #fbfbfb, #fff 5%, #e4e4e4 39%, #ddd 40%, #e0e0e0 60%, #fff),
+    var(--base-background),
     radial-gradient(circle closest-corner at 0 58%, #ddd 40%, #fff0 110%),
     radial-gradient(circle closest-corner at 100% 58%, #ddd 40%, #fff0 110%);
-  background-blend-mode: darken;
 }
 
 section.inset {
@@ -120,16 +129,29 @@ label.above {
 }
 
 .gem.green {
-  --base-color: #694;
+  --base-color: #559b19;
   --specular-highlight-at-center: #fff;
   --specular-highlight-at-edge: #e0e6e000;
-  --glow-1: #c6f9bcff;
-  --glow-2: #c6f9bcdd;
-  --glow-3: #c6f9bc88;
-  --glow-4: #c6f9bc00;
+  --glow-1: #dbfd96ff;
+  --glow-2: #dbfd96dd;
+  --glow-3: #dbfd9688;
+  --glow-4: #dbfd9600;
   --shadow: #121;
-  --border: #1f331f;
-  --border-bottom: #464;
+  --border: #1a3113;
+  --border-bottom: #718f3e;
+}
+
+.gem.yellow {
+  --base-color: #d88517;
+  --specular-highlight-at-center: #fff;
+  --specular-highlight-at-edge: #e6e6e000;
+  --glow-1: #fdfc92ff;
+  --glow-2: #fdfc92dd;
+  --glow-3: #fdfc9288;
+  --glow-4: #fdfc9200;
+  --shadow: #331;
+  --border: #62432c;
+  --border-bottom: #918e38;
 }
 
 .gem {
@@ -147,4 +169,21 @@ label.above {
   border: 1px solid var(--border);
   border-top: 1px solid #111;
   border-bottom: 1px solid var(--border-bottom);
+}
+
+.aqua {
+  --base-background: linear-gradient(to bottom, #d0e0f4, #acccee, #98c1e9, #8fbbe8, #8cbbe8, #87b8e9, #87b8ea 50%, #6aaaeb 51%, #75b3f0, #7fbaf5, #88c5ff, #91cdff, #9cd8ff, #abeaff, #b8faff);
+  background: var(--base-background);
+  text-shadow: none;
+}
+
+.aqua.raised {
+  background:
+    radial-gradient(circle closest-corner at 0 50%, #6aaaeb 10%, #6aaaeb00 70%),
+    radial-gradient(circle closest-corner at 100% 50%, #6aaaeb 10%, #6aaaeb00 70%),
+    var(--base-background);
+}
+
+button.aqua {
+  border-top: 1px solid #444;
 }
